@@ -1,0 +1,118 @@
+.right_side_item{
+    height: 130px; 
+   }
+
+.left_side_item{
+    height:300px;
+    bottom:15px;
+    }
+    
+.percent_view{
+    width: 50px;
+    height: 50px;
+    /* background: red; */
+    border-radius: 50%;
+    border: 3px solid #f57b0a;
+    font-size: 20px;
+    align-items: center;
+}
+
+ p{
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+ }
+
+.avatar {
+  vertical-align: middle;
+  width: 85px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+table{
+  width:100%;
+} 
+.right_side_item:hover{
+  height: 130px; 
+  background-color: #fdead7;
+ }
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+  
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+   
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px)  {
+ 
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 767px) and (max-width: 1023px) and (orientation: landscape) {
+  p{
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap; 
+    width: 120px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+   }
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  table {
+    margin: auto;
+     border-collapse: collapse;
+     overflow-x: auto;
+     display: block;
+     width: fit-content;
+     max-width: 100%;
+    } 
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  table {
+    margin: auto;
+     border-collapse: collapse;
+     overflow-x: auto;
+     display: block;
+     width: fit-content;
+     max-width: 100%;
+    } 
+  
+}
