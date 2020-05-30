@@ -1,32 +1,0 @@
-
-var ftGUID_4214925="43427878D802E3";
-var ftConfID_4214925="0";
-var ftParams_4214925="ftx=&fty=&ftadz=&ftscw=&ft_custom=&ftOBA=1&ft_ifb=1&ft_domain=www.online-image-editor.com&ft_agentEnv=0&ft_referrer=https%3A%2F%2Fwww.online-image-editor.com%2F&cachebuster=957288.7688636498";
-var ftKeyword_4214925="";
-var ftCustom_4214925="";
-var ftSection_4214925="";
-var ftSegment_4214925="";
-var ftSegmentList_4214925=[];
-var ftRuleMatch_4214925="0";
-var ftTimestamp_4214925="1583836253";
-var ftGeoC2_4214925="in";
-var ftGeoState_4214925="ka";
-var ftGeoCity_4214925="bangalore";
-var ftISP_4214925="ttsl-isp division";
-var ftSpeed_4214925="mobile";
-var ftDMA_4214925="356004";
-var ftLong_4214925="77.5841";
-var ftLat_4214925="12.9606";
-var ftPostal_4214925="560002";
-var ftTimeZone_4214925="530";
-var ftMobileCarrier_4214925="";
-var ftImp4214925 = {};
-ftImp4214925.privacy = "x";
-ftImp4214925.guidAge = "110";
-ftImp4214925.impID = "791379A5-247C-D75B-D7C9-E3C16B085B14";
-ftImp4214925.duid = "FT:43427878D802E3";
-
-ftImp4214925.ft_tpplid = "";
-ftImp4214925.ft_c = {};
-
-document.write('<scr'+'ipt src="https://cdn.flashtalking.com/xre/421/4214925/2776206/js/j-4214925-2776206.js" id="ftscript_m4214925" name="ftscript_m4214925"></scr'+'ipt>');
