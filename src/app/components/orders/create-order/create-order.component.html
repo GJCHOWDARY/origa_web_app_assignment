@@ -1,0 +1,25 @@
+<h1 mat-dialog-title *ngIf="mode=='edit'">Edit Order Details</h1>
+<h1 mat-dialog-title *ngIf="mode=='create'">Add Order</h1>
+<form (submit)="onSaveRole(roleForm)" #roleForm="ngForm">
+ <div class="font" mat-dialog-content>
+     <mat-form-field appearance="outline">                                         
+      <mat-label>Amount</mat-label>
+          <input matInput name="sub_total" [(ngModel)]="order.sub_total" type="number" placeholder="Order Amount" #amountInput="ngModel" required>
+           <mat-error *ngIf="amountInput.hasError('required')">Please Enter Amount.</mat-error>
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+        <mat-label>Assignee</mat-label>
+        <input type="text" name="userId" matInput [(ngModel)]="order.userId" (keyup)="searchUsers(assigneeInput.value)" [matAutocomplete]="auto" #assigneeInput="ngModel" required>
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let user of searchUser" [value]="user">
+            {{ user.name }}
+          </mat-option>      
+        </mat-autocomplete>
+        <mat-error *ngIf="assigneeInput.hasError('required')">Please Select Assignee Manager/User.</mat-error>
+      </mat-form-field>
+      </div>
+      <div mat-card-actions align="end">
+         <button mat-raised-button color="primary" matDialogClose (click)="close()">Close</button>&nbsp;
+         <button mat-raised-button color="primary" [disabled]="isLoading||roleForm.invalid" type="submit">Save</button>
+      </div>
+</form>

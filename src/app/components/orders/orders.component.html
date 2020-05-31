@@ -1,0 +1,43 @@
+<div class="card-container">
+  <div class="container">
+    <div class="row" style="float: right;">
+      <button class="btn btn-success float-right" (click)="openDialog(0,'create')">+ New Order</button>
+    </div>
+  </div>
+  <br />
+  <table mat-table [dataSource]="orders" class="mat-elevation-z8 table-striped">
+    <ng-container matColumnDef="User Name">
+      <th mat-header-cell *matHeaderCellDef> User Name </th>
+      <td mat-cell *matCellDef="let element" matTooltip="{{element.userId.email}}"> {{element.userId.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Amount">
+      <th mat-header-cell *matHeaderCellDef> Amount </th>
+      <td mat-cell *matCellDef="let element"> {{element.sub_total}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Created At">
+      <th mat-header-cell *matHeaderCellDef> Created At </th>
+      <td mat-cell *matCellDef="let element"> {{element.order_date | date}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center;">Action </th>
+      <td mat-cell *matCellDef="let element" style="text-align: center;">
+        <a mat-button color="primary" (click)="openDialog(element._id,'edit')" matTooltip="Edit User Details"
+          aria-label="Button that displays a tooltip when focused or hovered over">
+          <mat-icon md-list-icon>edit</mat-icon>
+        </a>
+        <button mat-button  color="warn" (click)="onDelete(element._id)"
+        matTooltip="Delete Role" aria-label="Button that displays a tooltip when focused or hovered over">
+          <mat-icon md-list-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+  </table>
+  <mat-progress-spinner *ngIf="isLoading" class="example-margin" mode="indeterminate" diameter="40" value="20">
+  </mat-progress-spinner>
+  <p class="info-text mat-body-1" *ngIf="orders.length <= 0 && !isLoading">No Orders Found!</p>
+  <mat-paginator [length]="count" [pageSize]="PerPage" [pageSizeOptions]="orderSizeOptions"
+    (page)="onChangedPage($event)" *ngIf="orders.length > 0"></mat-paginator>
+
+</div>

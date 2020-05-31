@@ -12,6 +12,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthInterceptor } from "./auth/auth-interceptor";
 import { ErrorInterceptor } from "./error-interceptor";
 import { HighchartsChartModule } from 'highcharts-angular';
+import { ComponentsModule } from './components/components.module';
 
  
 @NgModule({
@@ -23,7 +24,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    ComponentsModule
   ],
   declarations: [
     AppComponent,

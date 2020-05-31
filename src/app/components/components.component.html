@@ -1,0 +1,35 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav [fixedInViewport]="true" #sideNavTooggle [fixedTopGap]="48" #sidenav mode="side" class="example-sidenav"
+    opened="true" (mouseenter)="increase()">
+    <div style="flex-direction: column; box-sizing: border-box; display: flex;" *ngIf="sidenavWidth > 6">
+      <a (click)="decrease()" class="close"></a>
+    </div>
+    <mat-nav-list>
+      <mat-list-item matTooltip="Users" (click)="decrease()" [routerLink]="['/backend/users']"
+        routerLinkActive="mat-accent">
+        <mat-icon md-list-icon>group</mat-icon>
+        <div fxFlex="20"></div>
+        <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+          <span>Users</span>
+        </div>
+      </mat-list-item>
+      <mat-list-item matTooltip="Orders" [routerLink]="'/backend/orders'" (click)="decrease()">
+        <mat-icon md-list-icon>visibility</mat-icon>
+        <div fxFlex="20"></div>
+        <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+          <span>Orders Management</span>
+        </div>
+      </mat-list-item>
+      <mat-list-item matTooltip="UserAverage/Subtotal Bills" [routerLink]="'/backend/user_avg_bills'" (click)="decrease()">
+        <mat-icon md-list-icon>account_tree</mat-icon>
+        <div fxFlex="20"></div>
+        <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+          <span>User Subtotal Bills</span>
+        </div>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content style="margin-left: 74px;">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

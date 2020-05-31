@@ -1,0 +1,38 @@
+<h1 mat-dialog-title *ngIf="mode=='edit'">Edit User Details</h1>
+<h1 mat-dialog-title *ngIf="mode=='create'">Add New User</h1>
+<div>
+  <mat-progress-spinner *ngIf="isLoading" class="example-margin" mode="indeterminate" diameter="40" value="20">
+  </mat-progress-spinner>
+</div>
+<form (submit)="onSaveUser(userForm)" #userForm="ngForm">
+  <div class="font" mat-dialog-content>
+    <div>
+      <p>Employee Job Details</p>
+    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput name="name" [(ngModel)]="user.name" type="text" placeholder="Enter First Name"
+        #FnameInput="ngModel" required>
+      <mat-hint align="end">Not more then 50 characters long.</mat-hint>
+      <mat-error *ngIf="FnameInput.hasError('required')">Please Enter First Name.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput name="email" [(ngModel)]="user.email" type="email" placeholder="Enter Email invalid"
+        #cemailInput="ngModel" email pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+      <mat-error *ngIf="cemailInput.hasError('required')">Please Enter Email.</mat-error>
+      <mat-error *ngIf="cemailInput.hasError('pattern')">Email format should be
+        <small><b>joe@abc.com</b></small></mat-error>
+    </mat-form-field>
+    <mat-form-field *ngIf="mode=='edit'" appearance="outline">
+      <mat-label>No Of Orders</mat-label>
+      <input matInput name="no_of_orders" [(ngModel)]="user.no_of_orders" type="number" placeholder="Enter No 0f Orders"
+        #orderInput="ngModel">
+      <mat-error *ngIf="orderInput.hasError('required')">Please Enter Quantity.</mat-error>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" matDialogClose (click)="close()">Close</button>&nbsp;
+    <button mat-raised-button color="primary" type="submit" [disabled]="isLoading||userForm.invalid">Save</button>
+  </div>
+</form>
