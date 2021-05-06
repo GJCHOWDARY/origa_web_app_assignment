@@ -28,7 +28,7 @@
     "@ng-bootstrap/ng-bootstrap": "^6.0.1",
     "bootstrap": "^4.4.1",
     "chartjs-plugin-datalabels": "^0.7.0",
-    "highcharts": "^8.1.0",
+    "highcharts": "^9.0.0",
     "highcharts-angular": "^2.4.0",
     "jquery": "^3.5.1",
     "lodash": "^4.17.15",
